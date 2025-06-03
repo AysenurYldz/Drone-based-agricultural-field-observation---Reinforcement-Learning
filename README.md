@@ -1,71 +1,72 @@
 
-# 🌾 Gelişmiş Tarım Drone'u Simülasyonu
+# 🌾 Gelişmiş Tarım Drone'u Simülasyonu / Advanced Agricultural Drone Simulation
 
 Bu proje, **pekiştirmeli öğrenme (Q-learning)** algoritmasıyla çalışan bir tarım drone'unun simülasyonudur. Amaç, **hastalıklı bitkileri tespit etmek**, **batarya yönetimi sağlamak** ve **görev sonunda şarj istasyonuna dönmektir**.
 
+This project is a simulation of an agricultural drone powered by reinforcement learning (Q-learning) algorithm. The goal is to detect diseased plants, manage battery usage, and return to the charging station at the end of the mission.
 ---
 
-## 🚀 Özellikler
+## 🚀 Özellikler / Features
 
-- 6x6 grid tabanlı tarım alanı
-- 3 tür hücre:  
-  - `0`: Boş alan  
-  - `1`: Sağlıklı bitki  
-  - `2`: Hastalıklı bitki
-- Batarya yönetimi (%2.5 tüketim, %8 şarj)
-- Yerel 3x3 görüş alanı
-- Gelişmiş ödül ve ceza sistemi
-- Q-learning tabanlı akıllı ajan
-- Gerçekçi görselleştirme (OpenCV)
-- Eğitim ve test modları
+- 6x6 grid tabanlı tarım alanı / 6x6 grid-based farming area
+- 3 tür hücre: / 3 cell types:  
+  - `0`: Boş alan / Empty space  
+  - `1`: Sağlıklı bitki / Healthy plant  
+  - `2`: Hastalıklı bitki / Diseased plant
+- Batarya yönetimi (%2.5 tüketim, %8 şarj) / Battery management (2.5% consumption, 8% charge)
+- Yerel 3x3 görüş alanı/ Local 3x3 vision area
+- Gelişmiş ödül ve ceza sistemi / Advanced reward and penalty system
+- Q-learning tabanlı akıllı ajan/ Q-learning based intelligent agent
+- Gerçekçi görselleştirme (OpenCV) / Realistic visualization (OpenCV)
+- Eğitim ve test modları / Training and testing modes
 
 ---
 
-## 🧠 Öğrenme Bileşenleri
+## 🧠 Öğrenme Bileşenleri / Learning Components
 
 ### 📦 Durum (State)
 ```python
 {
-  "pozisyon": [y, x],
-  "ziyaret_edilen": 6x6 matris,
-  "yerel_gorunum": 3x3 matris,
-  "batarya": [0-100],
-  "sarjdan_beri_adim": int,
-  "hastalikli_tespit": [0-1]
+  "pozisyon": [y, x],           # Drone position
+  "ziyaret_edilen": 6x6 matris, # Visited cells matrix
+  "yerel_gorunum": 3x3 matris,  # Local view matrix
+  "batarya": [0-100],           # Battery percentage
+  "sarjdan_beri_adim": int,     # Steps since last charge
+  "hastalikli_tespit": [0-1]    # Disease detection ratio
 }
 ```
 
 ---
 
-### 🎯 Aksiyonlar
+### 🎯 Aksiyonlar/ Actions
 
-| Kod | Aksiyon |
+| Kod/ code | Aksiyon/ Action |
 |-----|---------|
-| 0   | Yukarı  |
-| 1   | Aşağı   |
-| 2   | Sol     |
-| 3   | Sağ     |
-| 4   | Şarj    |
+| 0   | Yukarı / Up  |
+| 1   | Aşağı / Down   |
+| 2   | Sol / Left     |
+| 3   | Sağ / Right     |
+| 4   | Şarj / Charge    |
 
 ---
 
-### 🏆 Ödül Sistemi
+### 🏆 Ödül Sistemi / Reward System
 
-| Durum                     | Ödül     |
+| Durum / Condition                    | Ödül   / Reward   |
 |--------------------------|----------|
-| Hastalıklı bitki tespiti | +300     |
-| Şarj istasyonuna dönüş   | +200     |
-| Boş alan keşfi           | +20      |
-| Sağlıklı bitki           | +10      |
-| Şarj etme                | +10~15   |
-| Batarya bitmesi          | -150     |
-| Tekrar ziyaret           | -15      |
+| Hastalıklı bitki tespiti / Diseased plant detection	 | +300     |
+| Şarj istasyonuna dönüş / Return to charging station	   | +200     |
+| Boş alan keşfi / Empty space discovery	          | +20      |
+| Sağlıklı bitki / Healthy plant	           | +10      |
+| Şarj etme / Charging	                | +10~15   |
+| Batarya bitmesi / Battery depletion         | -150     |
+| Tekrar ziyaret / Revisit          | -15      |
 
 ---
 
-## ⚙️ Kurulum
+## ⚙️ Kurulum/ Installation
 
-Gerekli kütüphaneleri yüklemek için:
+Gerekli kütüphaneleri yüklemek için: / To install required libraries:
 
 ```bash
 pip install numpy matplotlib opencv-python gym
@@ -74,7 +75,7 @@ pip install numpy matplotlib opencv-python gym
 ---
 
 
-## 📂 Dosya Yapısı
+## 📂 Dosya Yapısı/ File Structure
 
 ```
 .
@@ -92,32 +93,37 @@ pip install numpy matplotlib opencv-python gym
 
 ---
 
-## 🔧 Hiperparametreler
+## 🔧 Hiperparametreler / Hyperparameters
 
 | Parametre         | Değer       |
 |-------------------|-------------|
-| α (öğrenme oranı) | 0.15        |
-| γ (indirim oranı) | 0.92        |
-| ε (keşif oranı)   | 1.0 → 0.01  |
-| Batarya tüketimi  | %2.5/adım   |
-| Şarj hızı         | %8/adım     |
+| α (öğrenme oranı / learning rate)	 | 0.15        |
+| γ (indirim oranı / discount factor)	 | 0.92        |
+| ε (keşif oranı / exploration rate)	   | 1.0 → 0.01  |
+| Batarya tüketimi / Battery consumption	  | %2.5/adım / per move  |
+| Şarj hızı / Charging rate	     | %8/adım /per step     |
 
 ---
 
-## 📊 Performans Metrikleri
+## 📊 Performans Metrikleri / Performance Metrics
 
-**Başarı Puanı** hesaplaması:
+**Başarı Puanı** hesaplaması:/ **Success Score** calculation:  
 
 ```text
 Başarı Puanı = %70 * Tespit Oranı + %30 * Eve Dönüş Oranı
+
+Success Score = 70% * Detection Rate + 30% * Return-to-Base Rate
+
 ```
 
-- **Tespit Oranı** = Bulunan hastalıklı bitki sayısı / Toplam hastalıklı bitki sayısı  
+- **Tespit Oranı** = Bulunan hastalıklı bitki sayısı / Toplam hastalıklı bitki sayısı
+- **Detection Rate** = Detected diseased plants / Total diseased plants
 - **Eve Dönüş Oranı** = Görev sonunda şarj istasyonuna güvenli dönüş yüzdesi
-
+- **Return-to-Base Rate** = Percentage of safe returns to charging station at mission end
+  
 ---
 
-## 📸 Görselleştirme
+## 📸 Görselleştirme/ Visualization
 
 Drone’un hareketleri ve çevresi her adımda **OpenCV** ile güncellenerek görselleştirilir.
 
@@ -128,8 +134,16 @@ Drone’un hareketleri ve çevresi her adımda **OpenCV** ile güncellenerek gö
 
 görsel olarak izlenebilir.
 
+
+Drone movements and environment are visualized in real-time using **OpenCV** at each step.
+
+- Drone's current position
+- Battery status
+- Detected diseased plants
+- Grid map 
+
 ---
 
-## 👤 Geliştirici
+## 👤 Geliştirici/ Developer
 
 **Ayşenur Yıldız**
