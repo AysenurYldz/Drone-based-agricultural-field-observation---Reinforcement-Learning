@@ -106,15 +106,15 @@ pip install numpy matplotlib opencv-python gym
 
 ---
 
-## 🔧 Hiperparametreler /* Hyperparameters*
+## 🔧 Hiperparametreler /*Hyperparameters*
 
-| Parametre   /* Parameter   *    | Değer   /* Value *   |
+| Parametre   /* Parameter   *    | Değer   /*Value*   |
 |-------------------|-------------|
 | α (öğrenme oranı / *learning rate*)	 | 0.15        |
 | γ (indirim oranı / *discount factor)*	 | 0.92        |
 | ε (keşif oranı / *exploration rate)*  | 1.0 → 0.01  |
-| Batarya tüketimi / *Battery consumption* | %2.5/adım /*per move* |
-| Şarj hızı / *Charging rate*     | %8/adım /*per step *   |
+| Batarya tüketimi / *Battery consumption* | %2.5/adım / *per move* |
+| Şarj hızı / *Charging rate*     | %8/adım / *per step*   |
 
 ---
 
@@ -153,7 +153,7 @@ görsel olarak izlenebilir.
 *- Drone's current position*
 *- Battery status*
 *- Detected diseased plants*
-*- Grid map *
+*- Grid map*
 
 ---
 
