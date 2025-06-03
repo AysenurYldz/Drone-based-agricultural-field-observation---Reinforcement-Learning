@@ -21,17 +21,17 @@ Bu proje, **pekiştirmeli öğrenme (Q-learning)** algoritmasıyla çalışan bi
 - Eğitim ve test modları
 
 
-*- 6x6 grid-based farming area*
-*- 3 cell types:*  
-  *- `0`:Empty space*  
-  *- `1`: S Healthy plant*  
-  *- `2`:  Diseased plant*
-*- Battery management (2.5% consumption, 8% charge)*
-*- Local 3x3 vision area*
-*- Advanced reward and penalty system*
-*- Q-learning based intelligent agent*
-*- Realistic visualization (OpenCV)*
-*- Training and testing modes**
+- *6x6 grid-based farming area*
+- *3 cell types:*  
+  - *`0`:Empty space*  
+  - *`1`: S Healthy plant*  
+  - *`2`:  Diseased plant*
+- *Battery management (2.5% consumption, 8% charge)*
+- *Local 3x3 vision area*
+- *Advanced reward and penalty system*
+- *Q-learning based intelligent agent*
+- *Realistic visualization (OpenCV)*
+- *Training and testing modes**
 
 ---
 
@@ -150,10 +150,10 @@ görsel olarak izlenebilir.
 
 *Drone movements and environment are visualized in real-time using **OpenCV** at each step.*
 
-*- Drone's current position*
-*- Battery status*
-*- Detected diseased plants*
-*- Grid map*
+- *Drone's current position*
+- *Battery status*
+- *Detected diseased plants*
+- *Grid map*
 
 ---
 
