@@ -1,5 +1,5 @@
 
-# 🌾 Gelişmiş Tarım Drone'u Simülasyonu / *Advanced Agricultural Drone Simulation*
+# 🌾 Tarım Drone'u Simülasyonu / *Agricultural Drone Simulation*
 
 Bu proje, **pekiştirmeli öğrenme (Q-learning)** algoritmasıyla çalışan bir tarım drone'unun simülasyonudur. Amaç, **hastalıklı bitkileri tespit etmek**, **batarya yönetimi sağlamak** ve **görev sonunda şarj istasyonuna dönmektir.**
 
