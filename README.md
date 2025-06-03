@@ -133,6 +133,3 @@ görsel olarak izlenebilir.
 ## 👤 Geliştirici
 
 **Ayşenur Yıldız**
-
-- [LinkedIn](https://www.linkedin.com/in/aysenuryildizz/)
-- [GitHub](https://github.com/AysenurYldz)
