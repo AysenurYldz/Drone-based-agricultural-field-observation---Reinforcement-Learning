@@ -3,7 +3,7 @@
 
 Bu proje, **pekiştirmeli öğrenme (Q-learning)** algoritmasıyla çalışan bir tarım drone'unun simülasyonudur. Amaç, **hastalıklı bitkileri tespit etmek**, **batarya yönetimi sağlamak** ve **görev sonunda şarj istasyonuna dönmektir.**
 
-* This project is a simulation of an agricultural drone powered by reinforcement learning (Q-learning) algorithm. The goal is to detect diseased plants, manage battery usage, and return to the charging station at the end of the mission.*
+*This project is a simulation of an agricultural drone powered by reinforcement learning (Q-learning) algorithm. The goal is to detect diseased plants, manage battery usage, and return to the charging station at the end of the mission.*
 ---
 
 ## 🚀 Özellikler / *Features*
@@ -37,7 +37,7 @@ Bu proje, **pekiştirmeli öğrenme (Q-learning)** algoritmasıyla çalışan bi
 
 ## 🧠 Öğrenme Bileşenleri /*Learning Components*
 
-### 📦 Durum (State)
+### 📦 Durum (*State*)
 ```python
 {
   "pozisyon": [y, x],           *# Drone position*
@@ -53,9 +53,9 @@ Bu proje, **pekiştirmeli öğrenme (Q-learning)** algoritmasıyla çalışan bi
 
 ### 🎯 Aksiyonlar/ *Actions*
 
-| Kod/* code* | Aksiyon/ *Action* |
+| Kod/*code* | Aksiyon/ *Action* |
 |-----|---------|
-| 0   | Yukarı /* Up* |
+| 0   | Yukarı /*Up* |
 | 1   | Aşağı /*Down*   |
 | 2   | Sol / *Left  *   |
 | 3   | Sağ / *Right  *   |
@@ -65,15 +65,15 @@ Bu proje, **pekiştirmeli öğrenme (Q-learning)** algoritmasıyla çalışan bi
 
 ### 🏆 Ödül Sistemi / *Reward System*
 
-| Durum / *Condition*                    | Ödül   / *Reward *  |
+| Durum / *Condition*                    | Ödül   / *Reward*  |
 |--------------------------|----------|
 | Hastalıklı bitki tespiti / *Diseased plant detection*	 | +300     |
 | Şarj istasyonuna dönüş / *Return to charging station*	   | +200     |
-| Boş alan keşfi /* Empty space discovery	 *         | +20      |
-| Sağlıklı bitki /* Healthy plant	  *         | +10      |
-| Şarj etme /* Charging	     *           | +10~15   |
-| Batarya bitmesi / *Battery depletion *        | -150     |
-| Tekrar ziyaret /* Revisit   *       | -15      |
+| Boş alan keşfi /*Empty space discovery*         | +20      |
+| Sağlıklı bitki /*Healthy plant*         | +10      |
+| Şarj etme /*Charging*           | +10~15   |
+| Batarya bitmesi / *Battery depletion*        | -150     |
+| Tekrar ziyaret /*Revisit*       | -15      |
 
 ---
 
@@ -112,15 +112,15 @@ pip install numpy matplotlib opencv-python gym
 |-------------------|-------------|
 | α (öğrenme oranı / *learning rate*)	 | 0.15        |
 | γ (indirim oranı / *discount factor)*	 | 0.92        |
-| ε (keşif oranı / *exploration rate)	 *  | 1.0 → 0.01  |
-| Batarya tüketimi / *Battery consumption	 * | %2.5/adım /* per move * |
-| Şarj hızı / *Charging rate	*     | %8/adım /*er step  *   |
+| ε (keşif oranı / *exploration rate)*  | 1.0 → 0.01  |
+| Batarya tüketimi / *Battery consumption* | %2.5/adım /*per move* |
+| Şarj hızı / *Charging rate*     | %8/adım /*per step *   |
 
 ---
 
 ## 📊 Performans Metrikleri / *Performance Metrics*
 
-**Başarı Puanı** hesaplaması:/ * **Success Score** calculation:  *
+**Başarı Puanı** hesaplaması:/ ***Success Score** calculation:*
 
 ```text
 Başarı Puanı = %70 * Tespit Oranı + %30 * Eve Dönüş Oranı
