@@ -40,12 +40,12 @@ Bu proje, **pekiştirmeli öğrenme (Q-learning)** algoritmasıyla çalışan bi
 ### 📦 Durum (*State*)
 ```python
 {
-  "pozisyon": [y, x],           *# Drone position*
-  "ziyaret_edilen": 6x6 matris, *# Visited cells matrix*
-  "yerel_gorunum": 3x3 matris,  *# Local view matrix*
-  "batarya": [0-100],           *# Battery percentage*
-  "sarjdan_beri_adim": int,     *# Steps since last charge*
-  "hastalikli_tespit": [0-1]    *# Disease detection ratio*
+  "pozisyon": [y, x],           # Drone position
+  "ziyaret_edilen": 6x6 matris, # Visited cells matrix
+  "yerel_gorunum": 3x3 matris,  # Local view matrix
+  "batarya": [0-100],           # Battery percentage
+  "sarjdan_beri_adim": int,     # Steps since last charge
+  "hastalikli_tespit": [0-1]    # Disease detection ratio
 }
 ```
 
@@ -57,9 +57,9 @@ Bu proje, **pekiştirmeli öğrenme (Q-learning)** algoritmasıyla çalışan bi
 |-----|---------|
 | 0   | Yukarı /*Up* |
 | 1   | Aşağı /*Down*   |
-| 2   | Sol / *Left  *   |
-| 3   | Sağ / *Right  *   |
-| 4   | Şarj /* Charge *   |
+| 2   | Sol / *Left*   |
+| 3   | Sağ / *Right*   |
+| 4   | Şarj /*Charge*   |
 
 ---
 
