@@ -73,23 +73,6 @@ pip install numpy matplotlib opencv-python gym
 
 ---
 
-## 📌 Kullanım
-
-```python
-from TarimDroneSimulasyonu import TarimOrtami, AkilliDrone, drone_testi
-
-# Ortamı oluştur
-env = TarimOrtami(goruntule=True)
-
-# Ajanı eğit
-agent = AkilliDrone(env)
-agent.egit(bolum_sayisi=100000)
-
-# Eğitilmiş modeli test et
-drone_testi(agent.q_tablosu)
-```
-
----
 
 ## 📂 Dosya Yapısı
 
@@ -102,8 +85,8 @@ drone_testi(agent.q_tablosu)
 │   ├── drone.png
 │   └── sarj.png
 ├── model/
-│   └── q_table.npy
-├── TarimDroneSimulasyonu.py
+│   └── q_table.pkl
+├── TarimDroneSimulasyonu.ipynb
 └── README.md
 ```
 
