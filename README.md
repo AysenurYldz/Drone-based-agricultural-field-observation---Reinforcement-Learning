@@ -130,9 +130,9 @@ Başarı Puanı = %70 * Tespit Oranı + %30 * Eve Dönüş Oranı
 ```
 
 - **Tespit Oranı** = Bulunan hastalıklı bitki sayısı / Toplam hastalıklı bitki sayısı
-*- **Detection Rate** = Detected diseased plants / Total diseased plants*
+- ***Detection Rate** = Detected diseased plants / Total diseased plants*
 - **Eve Dönüş Oranı** = Görev sonunda şarj istasyonuna güvenli dönüş yüzdesi
-*- **Return-to-Base Rate** = Percentage of safe returns to charging station at mission end*
+- ***Return-to-Base Rate** = Percentage of safe returns to charging station at mission end*
   
 ---
 
